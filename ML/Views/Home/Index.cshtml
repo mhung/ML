@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+@model ModelInput
+
+<form method="post">
+    
+    <div class="form-group">
+        <label asp-for="Age" class="control-label">Age</label>
+        <input asp-for="Age" name="Age" class="form-control" value="@Model?.Age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Duration" class="control-label">Duration</label>
+        <input asp-for="Duration" name="Duration" class="form-control" value="@Model?.Duration" />
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreditAmount" class="control-label">Credit Amount</label>
+        <input asp-for="CreditAmount" name="CreditAmount" class="form-control" value="@Model?.CreditAmount" />
+        <span asp-validation-for="CreditAmount" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+
+
+    <br/>
+    <br/>
+    <span class="text-sucess">Prediction: @Model?.Class</span>
+
+</form>
